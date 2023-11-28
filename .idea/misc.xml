@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/drawable/confusing_shape.xml" value="0.2555" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/drawable/error_shape.xml" value="0.25" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/drawable/shape_window_dim.xml" value="0.298" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/drawable/success_shape.xml" value="0.25" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/drawable/warning_shape.xml" value="0.2555" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout-v26/fragment_first.xml" value="0.38697916666666665" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/content_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/customtoast_layout.xml" value="0.931077694235589" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_eighth.xml" value="0.5" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_fifth.xml" value="0.67" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_first.xml" value="0.3136344449134656" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_form_add_income.xml" value="0.3095833333333333" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_fouth.xml" value="0.4208984375" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_nineth.xml" value="0.42603211009174313" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_second.xml" value="0.67" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_setting.xml" value="0.2444078947368421" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_seventh.xml" value="0.5" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_sixth.xml" value="0.3136344449134656" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_ten.xml" value="0.31765711842667804" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_tenth.xml" value="0.42603211009174313" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/fragment_third.xml" value="0.3136344449134656" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/hehe1.xml" value="0.33" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/hehe2.xml" value="0.33" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/image_ngoc.xml" value="0.290234375" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/item_row_bill.xml" value="0.67" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/item_row_income.xml" value="0.67" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/item_row_income_temp.xml" value="0.4760672703751617" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/item_row_month.xml" value="0.5" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/item_row_month_bill.xml" value="0.31680205215904234" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/popup_detail.xml" value="0.31765711842667804" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/popup_window.xml" value="0.43348891481913654" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/title_bar.xml" value="0.2928637627432808" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/title_bar_1.xml" value="0.4633529907329402" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/layout/title_bar_form.xml" value="0.43348891481913654" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.931077694235589" />
+        <entry key="..\:/zzzzzzzzz/IT/CodeAppAndroid/App2/app/src/main/res/menu/menu_main.xml" value="0.931077694235589" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.67" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

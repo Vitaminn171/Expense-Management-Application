@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Home</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="money">Tiền mặt:</string>
+    <string name="gutmorning">Good Morning</string>
+    <string name="tung">Bảo Ngọc</string>
+    <string name="user">Username</string>
+    <string name="money_val">1,112,0000000000</string>
+    <string name="expense">Tổng tiền đã sử dụng:</string>
+    <string name="input_money">Nhập vào số tiền hiện đang có trong ví</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="change_image">Đổi ảnh</string>
+
+    <string name="income">Thu nhập</string>
+    <string name="add">Thêm</string>
+    <string name="textDelete">Xóa thông tin ?</string>
+    <string name="Cancel_insert_money">Hủy nhập tiền!</string>
+    <string name="success_insert">Cập nhật thành công!</string>
+    <string name="have_blank_fileds">Nhập thiếu thông tin!</string>
+    <string name="ask_update">Cập nhật thông tin?</string>
+    <string name="cancel_bill_detail_insert">Hủy nhập phiếu chi tiết chi tiêu!</string>
+    <string name="blank_field">Không để trống thông tin!</string>
+    <string name="success_add_detail">Thêm thành công 1 thông tin chi tiết!</string>
+    <string name="ask_cancel_bill_insert">Hủy nhập thông tin phiếu chi tiêu này?</string>
+    <string name="cancel_bill">Hủy nhập phiếu chi tiết chi tiêu!</string>
+    <string name="ask_date_already_data">Ngày này đã có thông tin được ghi từ trước, có muốn thêm hay không?</string>
+    <string name="ask_submit_bill">Xác nhận thêm thông tin phiếu chi tiêu này?</string>
+    <string name="null_money">Chưa nhập số tiền đang có!</string>
+    <string name="ask_cancel_income">Hủy nhập phiếu chi tiết thu nhập!</string>
+    <string name="ask_cancel_income_1">Hủy nhập thông tin phiếu thu nhập này?</string>
+    <string name="confirm_add_income">Xác nhận thêm thông tin phiếu thu nhập này?</string>
+</resources>

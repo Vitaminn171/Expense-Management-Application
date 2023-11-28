@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+
+    <!-- First Fragment -->
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.app.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+
+        <!-- HOME to view list of MONTH -->
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+
+        <!-- HOME to view of UPDATE_MONEY -->
+        <action
+            android:id="@+id/action_FirstFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+
+
+        <!-- HOME to view of LIST OF BILL MONTH -->
+        <action
+            android:id="@+id/action_FirstFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+    </fragment>
+    <!-- First Fragment -->
+
+
+    <!-- Second Fragment -->
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.app.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+
+        <!-- View list of MONTH to HOME -->
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+        <!-- View list of MONTH INCOME to View list of MONTH BILL -->
+        <action
+            android:id="@+id/action_SecondFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+
+        <!-- View list of MONTH to view of ADD_INCOME -->
+        <action
+            android:id="@+id/action_SecondFragment_to_FouthFragment"
+            app:destination="@id/FouthFragment" />
+
+
+        <!-- View list of MONTH to view list of INCOME -->
+        <action
+            android:id="@+id/action_SecondFragment_to_FifthFragment"
+            app:destination="@id/FifthFragment" />
+
+    </fragment>
+    <!-- Second Fragment -->
+
+
+
+    <!-- Third Fragment -->
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.example.app.ThirdFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_third">
+
+
+        <!-- View of UPDATE_MONEY to HOME -->
+        <action
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <!-- Third Fragment -->
+
+
+    <!-- Fouth Fragment -->
+    <fragment
+        android:id="@+id/FouthFragment"
+        android:name="com.example.app.FouthFragment"
+        android:label="form_add_income"
+        tools:layout="@layout/fragment_fouth">
+
+
+        <!-- View list of ADD_INCOME to view list of MONTH -->
+        <action
+            android:id="@+id/action_FouthFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+
+    </fragment>
+    <!-- Fouth Fragment -->
+
+
+
+    <!-- Fifth Fragment -->
+    <fragment
+        android:id="@+id/FifthFragment"
+        android:name="com.example.app.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth">
+
+        <!-- View list of INCOME to view list of MONTH -->
+        <action
+            android:id="@+id/action_FifthFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+        <!-- View list of INCOME to view list of MONTH BILL -->
+        <action
+            android:id="@+id/action_FifthFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+
+        <!-- View list of INCOME to HOME -->
+        <action
+            android:id="@+id/action_FifthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+        <!-- View list of INCOME to view of ADD_INCOME -->
+        <action
+            android:id="@+id/action_FifthFragment_to_FouthFragment"
+            app:destination="@id/FouthFragment" />
+
+
+        <!-- View list of INCOME to view list of INCOME_DETAILS -->
+        <action
+            android:id="@+id/action_FifthFragment_to_SixthFragment"
+            app:destination="@id/SixthFragment" />
+    </fragment>
+    <!-- Fifth Fragment -->
+
+
+
+
+    <!-- Sixth Fragment -->
+    <fragment
+        android:id="@+id/SixthFragment"
+        android:name="com.example.app.SixthFragment"
+        android:label="fragment_sixth"
+        tools:layout="@layout/fragment_sixth">
+
+        <!-- View list of INCOME_DETAILS to view list of INCOME -->
+        <action
+            android:id="@+id/action_SixthFragment_to_FifthFragment"
+            app:destination="@id/FifthFragment" />
+
+
+        <!-- View list of INCOME_DETAILS to HOME -->
+        <action
+            android:id="@+id/action_SixthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+        <!-- View list of INCOME_DETAILS to ADD_INCOME_DETAIL -->
+        <action
+            android:id="@+id/action_SixthFragment_to_FouthFragment"
+            app:destination="@id/FouthFragment" />
+    </fragment>
+    <!-- Sixth Fragment -->
+
+
+
+
+
+    <!-- Seventh Fragment -->
+    <fragment
+        android:id="@+id/SeventhFragment"
+        android:name="com.example.app.SeventhFragment"
+        android:label="fragment_seventh"
+        tools:layout="@layout/fragment_seventh">
+
+
+        <!-- View list of BILL MONTH to HOME -->
+        <action
+            android:id="@+id/action_SeventhFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+
+        <!-- View list of BILL MONTH to View list of MONTH INCOME -->
+        <action
+            android:id="@+id/action_SeventhFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+
+
+        <!-- View list of BILL MONTH to view of ADD_BILL -->
+        <action
+            android:id="@+id/action_SeventhFragment_to_NinethFragment"
+            app:destination="@id/NinethFragment" />
+
+
+        <!-- View list of BILL MONTH to view list of BILL -->
+        <action
+            android:id="@+id/action_SeventhFragment_to_EighthFragment"
+            app:destination="@id/EighthFragment" />
+
+    </fragment>
+    <!-- Seventh Fragment -->
+
+
+
+
+
+    <!-- Eighth Fragment -->
+    <fragment
+        android:id="@+id/EighthFragment"
+        android:name="com.example.app.EighthFragment"
+        android:label="fragment_eighth"
+        tools:layout="@layout/fragment_eighth">
+
+        <!-- View list of BILL to view list of BILL MONTH -->
+        <action
+            android:id="@+id/action_EighthFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+        <!-- View list of BILL to view list of INCOME MONTH -->
+        <action
+            android:id="@+id/action_EighthFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+
+        <!-- View list of BILL to HOME -->
+        <action
+            android:id="@+id/action_EighthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+        <!-- View list of BILL to view of ADD_BILL -->
+        <action
+            android:id="@+id/action_EighthFragment_to_NinethFragment"
+            app:destination="@id/NinethFragment" />
+
+
+        <!-- View list of INCOME to view list of BILL_DETAILS -->
+        <action
+            android:id="@+id/action_EighthFragment_to_TenthFragment"
+            app:destination="@id/TenthFragment" />
+    </fragment>
+    <!-- Eighth Fragment -->
+
+
+
+
+    <!-- Nineth Fragment -->
+    <fragment
+        android:id="@+id/NinethFragment"
+        android:name="com.example.app.NinethFragment"
+        android:label="form_add_bill"
+        tools:layout="@layout/fragment_nineth">
+
+
+        <!-- View list of ADD_INCOME to view list of MONTH -->
+        <action
+            android:id="@+id/action_NinethFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+
+    </fragment>
+    <!-- Nineth Fragment -->
+
+
+
+
+    <!-- Tenth Fragment -->
+    <fragment
+        android:id="@+id/TenthFragment"
+        android:name="com.example.app.TenthFragment"
+        android:label="fragment_tenth"
+        tools:layout="@layout/fragment_tenth">
+
+        <!-- View list of BILL_DETAILS to view list of BILL -->
+        <action
+            android:id="@+id/action_TenthFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+
+
+        <!-- View list of BILL_DETAILS to view list of BILL DETAILS-->
+        <action
+            android:id="@+id/action_TenthFragment_to_EighthFragment"
+            app:destination="@id/EighthFragment" />
+
+
+        <!-- View list of BILL_DETAILS to HOME -->
+        <action
+            android:id="@+id/action_TenthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+        <!-- View list of BILL_DETAILS to ADD_BILL_DETAIL -->
+        <action
+            android:id="@+id/action_TenthFragment_to_NinethFragment"
+            app:destination="@id/NinethFragment" />
+    </fragment>
+    <!-- Sixth Fragment -->
+</navigation>
