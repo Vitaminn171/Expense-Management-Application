@@ -1,12 +1,17 @@
 package com.example.app.Entities;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 
 import java.util.Date;
 
+
 @Entity(tableName = "bill")
+@TypeConverters({Converters.class})
 public class bill {
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -14,7 +19,8 @@ public class bill {
 
     //private LocalDate date;
     private String cost;
-    private String date;
+    private Date date;
+
 
     public int getID() {
         return id;
@@ -30,10 +36,21 @@ public class bill {
         this.cost = cost;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate(Date date) {
+       this.date = date;
+
     }
+
+    public String getFormattedDate() {
+        return Converters.dateToString(date);
+    }
+
+    public void setFormattedDate(String dateString) {
+        this.date = Converters.fromString(dateString);
+    }
+
+
 }

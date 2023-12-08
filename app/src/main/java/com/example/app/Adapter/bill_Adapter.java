@@ -215,7 +215,7 @@ public class bill_Adapter extends RecyclerView.Adapter<bill_Adapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         bill bill = bills.get(position);
         holder.text_id.setText(String.valueOf(position));
-        holder.text_date.setText("Ngày " + bill.getDate());
+        holder.text_date.setText("Ngày " + bill.getFormattedDate());
         holder.text_cost.setText("Tổng chi tiêu: " + bill.getCost());
         if(holder.btnDel != null){
             holder.btnDel.setOnClickListener(new View.OnClickListener() {
@@ -223,7 +223,7 @@ public class bill_Adapter extends RecyclerView.Adapter<bill_Adapter.ViewHolder> 
                 @Override
                 public void onClick(View view) {
                     //xoa chi tiet chi tiêu
-                    onButtonShowPopupWindowClick_Delete(view, bill, holder.layout, bill.getDate());
+                    onButtonShowPopupWindowClick_Delete(view, bill, holder.layout, bill.getFormattedDate());
                 }
             });
         }
@@ -236,7 +236,7 @@ public class bill_Adapter extends RecyclerView.Adapter<bill_Adapter.ViewHolder> 
                     //onButtonShowPopupWindowClick_Income(view, holder.text_date.getText().toString(), holder.layout);
 
                     Bundle bundle = new Bundle();
-                    String tmp = bill.getDate();
+                    String tmp = bill.getFormattedDate();
                     bundle.putString("date",tmp);
                     Navigation.findNavController(view).navigate(R.id.action_EighthFragment_to_TenthFragment,bundle);
 

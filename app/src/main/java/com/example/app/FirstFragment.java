@@ -94,7 +94,7 @@ public class FirstFragment extends Fragment {
             }
 
         });
-
+        
         materialDatePicker.addOnPositiveButtonClickListener(
                 new MaterialPickerOnPositiveButtonClickListener() {
                     @SuppressLint("SetTextI18n")
@@ -105,7 +105,7 @@ public class FirstFragment extends Fragment {
                         // button that is ok button update the
                         // selected date
                         FancyToast.makeText(getContext(),
-                                "" + materialDatePicker.getSelection(),
+                                "" + materialDatePicker.getHeaderText(),
                                 FancyToast.LENGTH_LONG,FancyToast.WARNING,
                                 R.drawable.ic_baseline_error_outline_24,
                                 false).show();

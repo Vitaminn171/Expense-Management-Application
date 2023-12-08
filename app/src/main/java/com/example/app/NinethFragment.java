@@ -136,7 +136,30 @@ public class NinethFragment extends Fragment {
                             @SuppressLint("SetTextI18n")
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                binding.outlinedTextField3Text.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                Calendar selectedDate = Calendar.getInstance();
+                                selectedDate.set(year, monthOfYear, dayOfMonth);
+
+                                // Creating a Calendar instance for today
+                                Calendar currentDate = Calendar.getInstance();
+
+                                // Check if the selected date is before today
+                                if (currentDate.before(selectedDate)) {
+                                    // The selected date is before today, show an error message
+                                    FancyToast.makeText(getContext(),
+                                                    "Sai ngày!",
+                                                    FancyToast.LENGTH_LONG,
+                                                    FancyToast.ERROR,
+                                                    R.drawable.ic_baseline_error_outline_24,
+                                                    false)
+                                            .show();
+                                    //Toast.makeText(getContext(), "Selected date cannot be before today", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    // Use String.format to ensure two digits for day and month
+                                    String formattedDay = String.format("%02d", dayOfMonth);
+                                    String formattedMonth = String.format("%02d", monthOfYear + 1);
+
+                                    binding.outlinedTextField3Text.setText(formattedDay + "/" + formattedMonth + "/" + year);
+                                }
                             }
                         }, year, month, day);
                 picker.show();
@@ -183,7 +206,7 @@ public class NinethFragment extends Fragment {
                         String temp = "";
                         date_temp = date;
                         bill_details.setName(title);
-                        bill_details.setDate(date);
+                        bill_details.setFormattedDate(date);
                         bill_details.setCost(cost);
                         bill_detailDao.insert_bill_detail(bill_details);
 
@@ -417,7 +440,7 @@ public class NinethFragment extends Fragment {
                 String temp = "";
                 date_temp = date;
                 bill_details.setName(title);
-                bill_details.setDate(date);
+                bill_details.setFormattedDate(date);
                 bill_details.setCost(cost);
                 bill_detailDao.insert_bill_detail(bill_details);
 
@@ -513,7 +536,7 @@ public class NinethFragment extends Fragment {
                 }
 
                 bill bills = new bill();
-                bills.setDate(date_temp);
+                bills.setFormattedDate(date_temp);
 
                 int numCost = allCost;
 
@@ -523,7 +546,7 @@ public class NinethFragment extends Fragment {
                 bill tempDetail = billDao.getItemByDate_bill(date_temp);
                 if(tempDetail != null){
                     tempDetail.setCost(formattedString);
-                    tempDetail.setDate(date_temp);
+                    tempDetail.setFormattedDate(date_temp);
                     billDao.update_bill(tempDetail);
                 }else{
                     billDao.insert_bill(bills);

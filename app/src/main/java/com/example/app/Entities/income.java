@@ -3,10 +3,12 @@ package com.example.app.Entities;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import java.util.Date;
 
 @Entity(tableName = "income")
+@TypeConverters({Converters.class})
 public class income {
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -14,7 +16,7 @@ public class income {
 
     //private LocalDate date;
     private String cost;
-    private String date;
+    private Date date;
 
     public int getID() {
         return id;
@@ -30,10 +32,18 @@ public class income {
         this.cost = cost;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getFormattedDate() {
+        return Converters.dateToString(date);
+    }
+
+    public void setFormattedDate(String dateString) {
+        this.date = Converters.fromString(dateString);
     }
 }

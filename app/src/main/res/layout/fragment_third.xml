@@ -51,14 +51,6 @@
 
     </Button>
 
-    <ImageView
-        android:id="@+id/IVPreviewImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-43dp" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view"
         android:layout_marginTop="20dp"

@@ -1,10 +1,12 @@
 package com.example.app.DAO;
 
+import com.example.app.Entities.Converters;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.RoomWarnings;
+import androidx.room.TypeConverters;
 import androidx.room.Update;
 
 import com.example.app.Entities.income;

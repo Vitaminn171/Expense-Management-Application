@@ -71,7 +71,7 @@ public class SecondFragment extends Fragment {
                 income_detail in;
                 in = ins.get(i);
 
-                tempDate = in.getDate(); // "DD/MM/YYYY"
+                tempDate = in.getFormattedDate(); // "DD/MM/YYYY"
                 int index = tempDate.indexOf("/") + 1;
                 int stringLength = tempDate.length();
 

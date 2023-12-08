@@ -15,7 +15,7 @@ public class bill_detail {
     private String name;
     //private LocalDate date;
     private String cost;
-    private String date;
+    private Date date;
 
     public int getID() {
         return id;
@@ -38,11 +38,19 @@ public class bill_detail {
         this.cost = cost;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getFormattedDate() {
+        return Converters.dateToString(date);
+    }
+
+    public void setFormattedDate(String dateString) {
+        this.date = Converters.fromString(dateString);
     }
 
 }

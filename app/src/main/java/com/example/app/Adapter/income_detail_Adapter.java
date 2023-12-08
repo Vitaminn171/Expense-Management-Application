@@ -143,7 +143,7 @@ public class income_detail_Adapter extends RecyclerView.Adapter<income_detail_Ad
         income_detail incomeDetails = income_details.get(position);
         holder.text_id.setText(String.valueOf(position));
         holder.text_title.setText(incomeDetails.getName());
-        holder.text_date.setText(incomeDetails.getDate());
+        holder.text_date.setText(incomeDetails.getFormattedDate());
         holder.text_cost.setText(incomeDetails.getCost());
         if(holder.btnDel != null){
             holder.btnDel.setOnClickListener(new View.OnClickListener() {

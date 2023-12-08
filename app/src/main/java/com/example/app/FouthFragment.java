@@ -139,7 +139,30 @@ public class FouthFragment extends Fragment {
                             @SuppressLint("SetTextI18n")
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                binding.outlinedTextField3Text.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                Calendar selectedDate = Calendar.getInstance();
+                                selectedDate.set(year, monthOfYear, dayOfMonth);
+
+                                // Creating a Calendar instance for today
+                                Calendar currentDate = Calendar.getInstance();
+
+                                // Check if the selected date is before today
+                                if (currentDate.before(selectedDate)) {
+                                    // The selected date is before today, show an error message
+                                    FancyToast.makeText(getContext(),
+                                                    "Sai ngày!",
+                                                    FancyToast.LENGTH_LONG,
+                                                    FancyToast.ERROR,
+                                                    R.drawable.ic_baseline_error_outline_24,
+                                                    false)
+                                            .show();
+                                    //Toast.makeText(getContext(), "Selected date cannot be before today", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    // Use String.format to ensure two digits for day and month
+                                    String formattedDay = String.format("%02d", dayOfMonth);
+                                    String formattedMonth = String.format("%02d", monthOfYear + 1);
+
+                                    binding.outlinedTextField3Text.setText(formattedDay + "/" + formattedMonth + "/" + year);
+                                }
                             }
                         }, year, month, day);
                 picker.show();
@@ -173,7 +196,8 @@ public class FouthFragment extends Fragment {
                 }
                 else{
                     //income_detail_DAO income_detailDao = database.income_detailDao();
-                    List<income_detail> tmp = income_detailDao.getItemByDate_income_detail(date);
+                    List<income_detail> tmp;
+                    tmp = income_detailDao.getItemByDate_income_detail(date);
                     if(tmp.size() != 0 && date_temp.equals("")){
                         data = tmp;
                         onButtonShowPopupWindowClick_Add(view,date,title,cost,income_detailDao,rv_incomeDetails,layoutManager);
@@ -182,11 +206,14 @@ public class FouthFragment extends Fragment {
                         String temp = "";
                         date_temp = date;
                         income_details.setName(title);
-                        income_details.setDate(date);
+                        income_details.setFormattedDate(date);
                         income_details.setCost(cost);
                         income_detailDao.insert_income_detail(income_details);
 
-                        List<income_detail> tempDetail = income_detailDao.getItemByDate_income_detail(date);
+                        if(date.length() < 9){
+                            date_temp = "0" + date;
+                        }
+                        List<income_detail> tempDetail = income_detailDao.getItemByDate_income_detail(date_temp);
                         result = tempDetail;
 
 
@@ -340,7 +367,7 @@ public class FouthFragment extends Fragment {
                     }
 
                     income incomes = new income();
-                    incomes.setDate(date_temp);
+                    incomes.setFormattedDate(date_temp);
 
                     int numCost = allCost;
 
@@ -564,10 +591,14 @@ public class FouthFragment extends Fragment {
                 String temp = "";
                 date_temp = date;
                 income_details.setName(title);
-                income_details.setDate(date);
+                income_details.setFormattedDate(date);
                 income_details.setCost(cost);
                 income_detailDao.insert_income_detail(income_details);
 
+
+                //List<income_detail> data_income_details;
+                //
+                //        data_income_details = income_DetailDao.getItemByDate_income_detail(date);
                 List<income_detail> tempDetail = income_detailDao.getItemByDate_income_detail(date);
                 result = tempDetail;
 
@@ -660,7 +691,7 @@ public class FouthFragment extends Fragment {
                 }
 
                 income incomes = new income();
-                incomes.setDate(date_temp);
+                incomes.setFormattedDate(date_temp);
 
                 int numCost = allCost;
 
@@ -670,7 +701,7 @@ public class FouthFragment extends Fragment {
                 income tempDetail = incomeDao.getItemByDate_income(date_temp);
                 if(tempDetail != null){
                     tempDetail.setCost(formattedString);
-                    tempDetail.setDate(date_temp);
+                    tempDetail.setFormattedDate(date_temp);
                     incomeDao.update_income(tempDetail);
                 }else{
                     incomeDao.insert_income(incomes);

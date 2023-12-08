@@ -187,7 +187,7 @@ public class income_Adapter extends RecyclerView.Adapter<income_Adapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         income income = incomes.get(position);
         holder.text_id.setText(String.valueOf(position));
-        holder.text_date.setText("Ngày " + income.getDate());
+        holder.text_date.setText("Ngày " + income.getFormattedDate());
         holder.text_cost.setText("Tổng thu nhập: " + income.getCost());
         if(holder.btnDel != null){
             holder.btnDel.setOnClickListener(new View.OnClickListener() {
@@ -195,7 +195,7 @@ public class income_Adapter extends RecyclerView.Adapter<income_Adapter.ViewHold
                 @Override
                 public void onClick(View view) {
                     //xoa chi tiet thu nhap
-                    onButtonShowPopupWindowClick_Delete(view, income, holder.layout, income.getDate());
+                    onButtonShowPopupWindowClick_Delete(view, income, holder.layout, income.getFormattedDate());
                 }
             });
         }
@@ -209,7 +209,7 @@ public class income_Adapter extends RecyclerView.Adapter<income_Adapter.ViewHold
                     //onButtonShowPopupWindowClick_Income(view, holder.text_date.getText().toString(), holder.layout);
 
                     Bundle bundle = new Bundle();
-                    String tmp = income.getDate();
+                    String tmp = income.getFormattedDate();
                     bundle.putString("date",tmp);
                     Navigation.findNavController(view).navigate(R.id.action_FifthFragment_to_SixthFragment,bundle);
 

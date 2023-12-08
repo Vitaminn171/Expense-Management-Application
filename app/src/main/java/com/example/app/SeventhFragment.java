@@ -76,7 +76,7 @@ public class SeventhFragment extends Fragment {
                 bill_detail in;
                 in = ins.get(i);
 
-                tempDate = in.getDate(); // "DD/MM/YYYY"
+                tempDate = in.getFormattedDate(); // "DD/MM/YYYY"
                 int index = tempDate.indexOf("/") + 1;
                 int stringLength = tempDate.length();
 
@@ -92,8 +92,6 @@ public class SeventhFragment extends Fragment {
             LinkedHashSet<String> hashSet = new LinkedHashSet<>(asList(list));
             list = hashSet.toArray(new String[0]);
             myList = Arrays.asList(list);
-
-
         }
         ArrayList<String> data = new ArrayList<String>(Arrays.asList(list));
         binding.backButton.setOnClickListener(new View.OnClickListener() {
