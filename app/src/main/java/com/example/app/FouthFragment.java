@@ -366,7 +366,7 @@ public class FouthFragment extends Fragment {
                     }
                     if(walletDao.getItemById_wallet(0) == null){
                         FancyToast.makeText(getContext(),
-                                "Chưa nhập số tiền đang có nhee !",
+                                "Chưa nhập số tiền đang có!",
                                 FancyToast.LENGTH_LONG,FancyToast.WARNING,
                                 R.drawable.ic_baseline_error_outline_24,
                                 false).show();
@@ -394,7 +394,7 @@ public class FouthFragment extends Fragment {
                 NavHostFragment.findNavController(FouthFragment.this)
                         .navigate(R.id.action_FouthFragment_to_SecondFragment);
                 FancyToast.makeText(getContext(),
-                                "Hủy nhập phiếu chi tiết thu nhập nhee!",
+                                "Hủy nhập phiếu chi tiết thu nhập!",
                                 FancyToast.LENGTH_LONG,
                                 FancyToast.WARNING,
                                 R.drawable.ic_baseline_error_outline_24,
