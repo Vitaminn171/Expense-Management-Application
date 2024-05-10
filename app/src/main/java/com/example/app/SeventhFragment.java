@@ -3,6 +3,7 @@ package com.example.app;
 import static java.util.Arrays.asList;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.StateSet;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
+import com.bumptech.glide.Glide;
 import com.example.app.*;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +47,8 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+import android.content.SharedPreferences;
+
 public class SeventhFragment extends Fragment {
 
     private FragmentSeventhBinding binding;
@@ -65,6 +70,8 @@ public class SeventhFragment extends Fragment {
         binding = FragmentSeventhBinding.inflate(inflater, container, false);
 
         AppDatabase database = AppDatabaseSingleton.getInstance(requireContext());
+
+
 
         bill_detail_DAO bill_detailDao = database.bill_detailDao();
         String month,tempDate;
@@ -140,9 +147,15 @@ public class SeventhFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        SharedPreferences sharedPreferences = FirstFragment.sharedPreferences;
+        binding.cardView5.text0.setText(FunctionManager.getUsername(sharedPreferences));
+        Glide.with(requireContext())
+                .load(FunctionManager.getImagePath(sharedPreferences))
+                .into((binding.cardView5.img));
 
     }
+
+
 
 
     @Override

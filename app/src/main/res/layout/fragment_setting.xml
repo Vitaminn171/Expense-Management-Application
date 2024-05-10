@@ -1,58 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    tools:context=".SettingFragment" >
+    android:layout_height="match_parent"
+    tools:context=".SettingFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        android:id="@+id/cardView5"
+        layout="@layout/title_bar_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:layout_height="wrap_content" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img"
-            android:layout_width="270dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="25dp"
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:shadowColor="@color/text_shadow"
+        android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageButton>
 
-            android:cropToPadding="false"
-            android:elevation="5dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/circle"
-            app:srcCompat="@drawable/user">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:cropToPadding="false"
+        android:elevation="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/user">
 
-        </com.google.android.material.imageview.ShapeableImageView>
+    </com.google.android.material.imageview.ShapeableImageView>
 
-        <Button
-            android:id="@+id/button_change_image"
-            android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/button_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/blue_100"
+        android:text="Chọn ảnh"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextField_username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:hint="Tên người dùng"
+        app:hintTextColor="@color/pink_400"
+        app:boxStrokeColor="@color/teal_1"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_picker"
+        app:startIconDrawable="@drawable/ic_baseline_edit_note_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/outlinedTextField_username_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
-            android:fontFamily="@font/comic"
-            android:text="@string/change_image"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:layout_marginTop="25dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            app:cornerRadius="30dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img"
-            app:layout_constraintVertical_bias="1.0">
+            android:fontFamily="@font/comic" />
 
-        </Button>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Lưu"
+        android:backgroundTint="@color/green_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_username" />
 
-
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,37 +1,38 @@
 package com.example.app;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
+import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.room.Room;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
-import com.example.app.Entities.bill;
 import com.example.app.databinding.FragmentFirstBinding;
 
 import com.example.app.Entities.*;
@@ -40,18 +41,18 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.io.File;
 import java.util.List;
+import java.util.Objects;
 
 public class FirstFragment extends Fragment {
     private static final String TAG = "hehe";
     List<wallet> mWallet;
     private FragmentFirstBinding binding;
     String temp = " 1 ";
+    Fragment fragment = this;
 
+    public static SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(
@@ -59,6 +60,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+
 
 
 
@@ -84,15 +86,11 @@ public class FirstFragment extends Fragment {
         });
 
         //setting button
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
-        ImageButton button_setting = view.findViewById(R.id.setting);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_ThirdFragment);
-            }
 
+
+        binding.cardView5.setting.setOnClickListener(view1 -> {
+            NavHostFragment.findNavController(FirstFragment.this)
+                    .navigate(R.id.action_FirstFragment_to_SettingFragment);
         });
         
         materialDatePicker.addOnPositiveButtonClickListener(
@@ -152,6 +150,9 @@ public class FirstFragment extends Fragment {
 //                .allowMainThreadQueries()
 //                .build();
 
+        sharedPreferences = Objects.requireNonNull(fragment.getActivity()).getSharedPreferences("info", MODE_PRIVATE);
+        getInfo(database, sharedPreferences);
+
         binding.changeMoney.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -202,6 +203,8 @@ public class FirstFragment extends Fragment {
             binding.textMoney1.setText(numCost);
         }
 
+
+
     }
 
 
@@ -215,6 +218,37 @@ public class FirstFragment extends Fragment {
         binding.textMoney.setText(available);
         binding.textMoney1.setText(cost);
     }
+
+    private void getInfo(AppDatabase database, SharedPreferences sharedPreferences) {
+        info_DAO infoDao = database.infoDao();
+        info img = infoDao.getItemById(0);
+            if (img != null) {
+                Glide.with(requireContext())
+                        .load(img.getImagePath())
+                        .into((binding.cardView5.img));
+
+                binding.cardView5.text0.setText(img.getName());
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("username", img.getName());
+                editor.putString("image", img.getImagePath());
+                editor.apply(); // Hoặc editor.commit();
+
+
+//                binding.cardView5.text0.setText(FunctionManager.getUsername(sharedPreferences));
+//                binding.cardView5.img.setImageURI(FunctionManager.getImageUri(sharedPreferences));
+
+            }
+    }
+
+//    public static void setUsername_Image(SharedPreferences sharedPreferences){
+//        String username = sharedPreferences.getString("username", null);
+//        String imageUri = sharedPreferences.getString("imageUri", null);
+//        Uri uri = Uri.parse(imageUri);
+//        binding.cardView5.text0.setText(username);
+//        binding.cardView5.img.setImageURI(uri);
+//    }
+
 
     @Override
     public void onDestroyView() {

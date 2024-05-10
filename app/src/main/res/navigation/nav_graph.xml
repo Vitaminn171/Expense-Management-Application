@@ -31,6 +31,12 @@
             android:id="@+id/action_FirstFragment_to_SeventhFragment"
             app:destination="@id/SeventhFragment" />
 
+
+        <!-- HOME to view of SETTING -->
+        <action
+            android:id="@+id/action_FirstFragment_to_SettingFragment"
+            app:destination="@id/SettingFragment" />
+
     </fragment>
     <!-- First Fragment -->
 
@@ -306,5 +312,22 @@
             android:id="@+id/action_TenthFragment_to_NinethFragment"
             app:destination="@id/NinethFragment" />
     </fragment>
-    <!-- Sixth Fragment -->
+    <!-- Tenth Fragment -->
+
+    <!-- Setting Fragment -->
+    <fragment
+        android:id="@+id/SettingFragment"
+        android:name="com.example.app.SettingFragment"
+        android:label="setting"
+        tools:layout="@layout/fragment_setting">
+
+        <!--  -->
+        <action
+            android:id="@+id/action_SettingFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+    </fragment>
+    <!-- Setting Fragment -->
+
+
 </navigation>

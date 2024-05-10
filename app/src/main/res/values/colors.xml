@@ -14,6 +14,9 @@
     <color name="greenpastel">#24B2AA</color>
     <color name="green_100">#7D9D9C</color>
     <color name="green_200">#576F72</color>
+    <color name="green_500">#B0D9B1</color>
+    <color name="green_600">#79AC78</color>
+    <color name="green_700">#D0E7D2</color>
     <color name="tan">#E4DCCF</color>
     <color name="orange">#FAB3A7</color>
     <color name="orangeee">#ED8473</color>

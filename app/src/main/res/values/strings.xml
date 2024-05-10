@@ -11,7 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="money">Tiền mặt:</string>
     <string name="gutmorning">Good Morning</string>
-    <string name="tung">Bảo Ngọc</string>
     <string name="user">Username</string>
     <string name="money_val">1,112,0000000000</string>
     <string name="expense">Tổng tiền đã sử dụng:</string>
@@ -37,4 +36,5 @@
     <string name="ask_cancel_income">Hủy nhập phiếu chi tiết thu nhập!</string>
     <string name="ask_cancel_income_1">Hủy nhập thông tin phiếu thu nhập này?</string>
     <string name="confirm_add_income">Xác nhận thêm thông tin phiếu thu nhập này?</string>
+    <string name="cancel_info">Hủy cập nhật thông tin cá nhân!</string>
 </resources>
